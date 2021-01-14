@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>All Flats!</h1>
+  <%= link_to "Add", new_flat_path %>
+    <div class="cards">
+      <% @flats.each do |flat| %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= link_to flat.name, flat_path(flat) %></h2>
+            <p>Address: <%= flat.address %></p>
+            <p>Price per night: <%= flat.price_per_night %></p>
+            <p>Number of guests: <%= flat.number_of_guests %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
